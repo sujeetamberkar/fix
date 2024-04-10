@@ -1,0 +1,3 @@
+#,Time,%Passes,Change,Test,Pass,Partial,Fail,Untested
+0,Wed Apr 10 11:00:13 IST 2024,20,20,BasicsLargerProblem,BasicsLargerProblem+ BasicsSmallProblem+ ,FairAllocationSmallProblem+ LargerNumberOfRandoms+ SmallNumberOfRandoms+ ,ForkJoinSmallProblem+ SynchronizationSmallProblem+ ,FairAllocationLargerProblem ForkJoinLargerProblem SynchronizationLargerProblem ,
+0,Wed Apr 10 11:00:13 IST 2024,20,20,BasicsLargerProblem,BasicsLargerProblem+ BasicsSmallProblem+ ,FairAllocationSmallProblem+ LargerNumberOfRandoms+ SmallNumberOfRandoms+ ,ForkJoinSmallProblem+ SynchronizationSmallProblem+ ,FairAllocationLargerProblem ForkJoinLargerProblem SynchronizationLargerProblem ,

@@ -1,0 +1,86 @@
+
+0,Wed Apr 10 11:00:13 IST 2024*PRE_OUTPUT*
+>>Running test BasicsLargerProblem: 
+This test checks for the correct thread count, number of loop iterations performed to process the input random numbers, correct implementation of each iteration, and pre-fork behavior for the larger problem.
+<<
+>>Running test LargerNumberOfRandoms: 
+This general secondary test runs ConcurrentOddNumbers on a larger problem, created by giving an argument of 14 to the main method, and provides an analysis of the output used by the specific tests that determine how well you have fixed the individual bugs
+<<
+>>Test about to invoke ConcurrentOddNumbers with arguments [14]<<
+*OUTPUT*
+Dispatcher thread->Random Numbers:[853, 688, 109, 394, 728, 955, 667, 652, 948, 573, 816, 305, 605, 637]
+Worker thread-0->Index:0
+Worker thread-0->Number:853
+Worker thread-0->Is Odd:true
+Worker thread-0->Index:1
+Worker thread-0->Number:688
+Worker thread-0->Is Odd:false
+Worker thread-0->Index:2
+Worker thread-0->Number:109
+Worker thread-0->Is Odd:true
+Worker thread-0->Index:3
+Worker thread-0->Number:394
+Worker thread-0->Is Odd:false
+Worker thread-0->Index:4
+Worker thread-0->Number:728
+Worker thread-0->Is Odd:false
+Worker thread-0->Num Odd Numbers:2
+Worker thread-1->Index:5
+Worker thread-1->Number:955
+Worker thread-1->Is Odd:true
+Worker thread-1->Index:6
+Worker thread-1->Number:667
+Worker thread-1->Is Odd:true
+Worker thread-1->Index:7
+Worker thread-1->Number:652
+Worker thread-1->Is Odd:false
+Worker thread-1->Num Odd Numbers:2
+Worker thread-2->Index:8
+Worker thread-2->Number:948
+Worker thread-2->Is Odd:false
+Worker thread-2->Index:9
+Worker thread-2->Number:573
+Worker thread-2->Is Odd:true
+Worker thread-2->Index:10
+Worker thread-2->Number:816
+Worker thread-2->Is Odd:false
+Worker thread-2->Num Odd Numbers:1
+Worker thread-3->Index:11
+Worker thread-3->Number:305
+Worker thread-3->Is Odd:true
+Worker thread-3->Index:12
+Worker thread-3->Number:605
+Worker thread-3->Is Odd:true
+Worker thread-3->Index:13
+Worker thread-3->Number:637
+Worker thread-3->Is Odd:true
+Worker thread-3->Num Odd Numbers:3
+Dispatcher thread->Total Num Odd Numbers:8
+Dispatcher thread->Odd Numbers:[853, 109, 955, 667, 573, 305, 605, 637]
+*ERROR*
+
+*POST_OUTPUT*
+>>Test Result:
+BasicsSmallProblem,100.0% complete,2.0,2.0,
+<<
+>>Test Result:
+ForkJoinSmallProblem,0.0% complete,0.0,5.0,
+No interleaving during fork
+<<
+>>Test Result:
+FairAllocationSmallProblem,50.0% complete,5.0,10.0,
+Imbalanced thread load:
+Max thread iterations = 4 Min thread iterations = 1 
+Total iterations correct
+<<
+>>Test Result:
+SynchronizationSmallProblem,0.0% complete,0.0,3.0,
+Preceding test ForkJoinSmallProblem failed.
+Please correct the problems identified by preceding test:ForkJoinSmallProblem before running this test
+<<
+>>Test Result:
+BasicsLargerProblem,100.0% complete,2.0,2.0,
+<<
+*END_OUTPUT*
+
+

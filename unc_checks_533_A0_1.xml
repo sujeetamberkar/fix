@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This configuration file was written by the eclipse-cs plugin configuration 
+	editor -->
+<!-- Checkstyle-Configuration: Test Description: none -->
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN" "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+
+<module name="unc.tools.checkstyle.AnExtendibleChecker">
+
+
+	<property name="severity" value="warning" />
+
+
+	<module name="unc.tools.checkstyle.AnExtendibleTreeWalker">
+		<property name="severity" value="info" />
+
+		<module name="STBuilder">
+			<property name="configurationFileName"
+				value="ClassRegistry.csv" />
+			<property name="includeTypeTags" value="*" />
+			<property name="severity" value="info" />
+			<property name="logNoMatches" value="true" />
+			<property name="importsAsExistingClasses" value="true" />
+			<property name="logAggregateStatistics" value="true" />
+
+			<property name="logMethodsDeclared" value="true" />
+			<property name="logVariablesDeclared" value="true" />
+			<property name="logPropertiesDeclared" value="true" />
+			<property name="logAccessModifiersUsed" value="true" />
+			<property name="logSuperTypes" value="true" />
+			<property name="logInnerTypes" value="true" />
+			<property name="logInterfaces" value="true" />
+			<property name="trackTokenTypesUsedInMethods" value="true" />
+			
+
+
+			<property name="excludeClassRegularExpressions"
+				value="
+				checkstyle.*,
+				test.simulation.*
+			" />
+			<property name="externalPackagePrefixes"
+				value="								
+								assignments.util,
+								java.io
+							" />
+
+		</module>
+
+
+	</module>
+
+
+	<module name="unc.tools.checkstyle.ANonCachingTreeWalker">
+		<property name="severity" value="warning" />
+		<module name="ClassDefined">
+			<property name="severity" value="info" />
+			<property name="expectedTypes" value="
+			@GreetingMain,
+		" />
+		</module>
+		<module name="ExpectedSignatures">
+			<property name="severity" value="warning" />
+			<property name="includeTypeTags" value="@GreetingMain" />
+			<property name="expectedSignatures"
+				value="
+			main:String[]->void,
+		" />
+		</module>
+		<module name="MissingMethodCall">
+			<property name="severity" value="warning" />
+			<property name="includeTypeTags" value="@GreetingMain" />
+			<property name="callingMethod" value="main:String[]->void"/>
+			
+			<property name="expectedCalls"
+				value="
+			java.io.PrintStream!println:*->.*,
+		" />
+		</module>
+		<module name="MissingMethodCall">
+			<property name="severity" value="info" />
+			<property name="includeTypeTags" value="@GreetingMain" />
+			<property name="callingMethod" value="main:String[]->void"/>
+			
+			<property name="expectedCalls"
+				value="
+			java.io.PrintStream!println:*->.*,
+		" />
+		</module>
+		
+		<module name="DuplicateShortTypeName">
+			<property name="severity" value="warning" />
+			<property name="includeTypeTags" value="*" />
+		</module>
+
+
+
+		<module name="FunctionAssignsGlobal">
+			<property name="severity" value="warning" />
+			<property name="excludeMethodTags"
+				value="
+					next(.*), 
+					pop(.*), 
+					delete(.*), 
+					remove(.*), 
+					read(.*), 					
+					set(.*), 
+					process(.*), 
+					scan(.*), 
+					(.*)create(.*), 					 
+					parse(.*),
+					(.*)actory(.*),
+					fetch(.*),
+					run(.*),
+					update(.*),
+					add(.*),
+					
+					" />
+
+		</module>
+		<module name="SetterAssignsGlobal">
+			<property name="severity" value="warning" />
+		</module>
+		<module name="BulkierThen">
+			<property name="severity" value="warning" />
+			<property name="minThenElseRatio" value="1" />
+			<property name="maxElsePartSize" value="1" />
+		</module>
+		<module name="ThenBranching">
+			<property name="severity" value="warning" />
+
+		</module>
+
+		<module name="LiberalMagicNumber">
+			<property name="severity" value="warning" />
+			<property name="allowedSiblings" value="Math.(.*)" />
+
+		</module>
+		<module name="MethodAccessModifier">
+			<property name="severity" value="info" />
+		</module>
+		<module name="MethodAccessModifier">
+			<property name="severity" value="warning" />
+		</module>
+		<module name="PublicMethodsOverride">
+			<property name="severity" value="warning" />
+		</module>
+		<module name="PublicMethodsOverride">
+			<property name="severity" value="info" />
+		</module>
+		<module name="ClassHasOneInterface">
+			<property name="severity" value="warning" />
+		</module>
+		<module name="VariableHasClassType">
+			<property name="severity" value="warning" />
+		</module>
+		<module name="VariableHasClassType">
+			<property name="severity" value="info" />
+		</module>
+
+
+
+		<module name="PeerCommonProperties">
+			<property name="severity" value="warning" />
+
+
+		</module>
+
+		<module name="ConstantDefined">
+			<property name="severity" value="info" />
+		</module>
+
+	
+
+
+		<module name="BulkierElse">
+			<property name="severity" value="info" />
+			<property name="minElseThenRatio" value="1" />
+		</module>
+		<module name="ElseBranching">
+			<property name="severity" value="info" />
+		</module>
+		<module name="MnemonicNameCheck">
+			<property name="severity" value="warning" />
+			<property name="processType" value="false" />
+			<property name="processLocals" value="true" />
+			<property name="processParameters" value="true" />
+			<property name="processGlobals" value="true" />
+			<property name="processPublicMethods" value="false" />
+			<property name="processNonPublicMethods" value="true" />
+			<property name="minimumLettersInNameComponent" value="2" />
+			<property name="minimumVowelsInNameComponent" value="1" />
+			<property name="checkNumVowels" value="true" />
+			<property name="checkNumLetters" value="true" />
+			<property name="checkInDictionary" value="true" />
+			<property name="allowedComponents"
+				value="
+					f,
+					nio,
+					xml,
+					classifier,
+					checkstyle,
+			" />
+
+		</module>
+		
+		<module name="MnemonicNameCheck">
+			<property name="severity" value="info" />
+			<property name="processType" value="false" />
+			<property name="processLocals" value="true" />
+			<property name="processParameters" value="true" />
+			<property name="processGlobals" value="true" />
+			<property name="processPublicMethods" value="false" />
+			<property name="processNonPublicMethods" value="true" />
+			<property name="minimumLettersInNameComponent" value="2" />
+			<property name="minimumVowelsInNameComponent" value="1" />
+			<property name="checkNumVowels" value="true" />
+			<property name="checkNumLetters" value="true" />
+			<property name="checkInDictionary" value="true" />
+			<property name="allowedComponents"
+				value="
+					f,
+					nio,
+					xml,
+					classifier,
+					checkstyle,
+			" />
+
+		</module>
+		
+		<module name="FinalParameterDefined">
+			<property name="severity" value="info" />
+		</module>
+
+		<module name="MethodBlockLimit">
+			<property name="severity" value="warning" />
+			<property name="max" value="1" />
+		</module>
+		<module name="NestedBlockDepth">
+			<property name="severity" value="warning" />
+			<property name="max" value="1" />
+		</module>
+		<module name="EqualsAvoidedNullCheck">
+			<property name="severity" value="info" />
+		</module>
+		<module name="EqualsAvoidedNullCheck">
+			<property name="severity" value="warning" />
+		</module>
+		<module name="ClassDecomposition">
+			<property name="severity" value="warning" />
+		</module>
+
+
+
+
+
+
+
+
+
+
+
+
+	</module>
+	<module name="TreeWalker">
+		<module name="EqualsAvoidNull" />
+		<module name="SimplifyBooleanExpression" />
+		<module name="SimplifyBooleanReturn" />
+		<module name="StringLiteralEquality" />
+		<module name="NestedForDepth">
+			<property name="max" value="1" />
+		</module>
+		<module name="NestedIfDepth">
+			<property name="max" value="1" />
+		</module>
+		<module name="PackageDeclaration" />
+		<module name="HiddenField" />
+
+
+		<module name="VisibilityModifier">
+			<property name="packageAllowed" value="true" />
+			<property name="protectedAllowed" value="true" />
+		</module>
+		<module name="ConstantName" />
+		<module name="TypeName" />
+		<module name="MethodName" />
+		<module name="LocalVariableName" />
+		<module name="MemberName" />
+		<module name="StaticVariableName" />
+		<module name="NeedBraces" />
+		<module name="MultipleStringLiterals" />
+		<module name="OuterTypeFilename" />
+
+
+		<module name="OneTopLevelClass" />
+		<module name="EmptyBlock">
+			<property name="option" value="TEXT" />
+			<property name="tokens"
+				value="LITERAL_TRY, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE, LITERAL_SWITCH" />
+		</module>
+		<module name="NeedBraces" />
+		<module name="ArrayTypeStyle" />
+		<module name="MissingSwitchDefault" />
+		<module name="FallThrough" />
+
+		
+		<module name="TypeName">
+
+		</module>
+		<module name="MemberName">
+
+		</module>
+		<module name="ParameterName">
+		</module>
+		<module name="LambdaParameterName"/>
+
+	
+		<module name="LocalVariableName">
+
+		</module>
+		<module name="ClassTypeParameterName">
+
+		</module>
+		<module name="MethodTypeParameterName">
+
+		</module>
+		<module name="InterfaceTypeParameterName"/>
+
+		
+		<module name="AbbreviationAsWordInName">
+			<property name="ignoreFinal" value="false" />
+			<property name="allowedAbbreviationLength" value="1" />
+		</module>
+		<module name="AvoidStarImport" />
+		<module name="RedundantImport" />
+		<module name="UnusedImports" />
+		
+		<module name="MethodName">
+			
+		</module>
+
+		<module name="EmptyCatchBlock">
+			<property name="exceptionVariableName" value="expected" />
+		</module>
+
+		<module name="BooleanExpressionComplexity">
+			<property name="max" value="3" />
+		</module>
+		<module name="ClassDataAbstractionCoupling">
+			<property name="max" value="7" />
+		</module>
+		<module name="ClassFanOutComplexity">
+			<property name="max" value="20" />
+		</module>
+		<module name="CyclomaticComplexity">
+			<property name="max" value="10" />
+		</module>
+		<module name="JavaNCSS">
+			<property name="methodMaximum" value="50" />
+			<property name="classMaximum" value="1500" />
+			<property name="fileMaximum" value="2000" />
+		</module>
+
+		<module name="MissingOverride" />
+		<module name="AvoidNestedBlocks" />
+		
+		<module name="InterfaceIsType" />
+		<module name="ThrowsCount">
+			<property name="max" value="4" />
+		</module>
+		<module name="CovariantEquals" />	
+		<module name="FinalLocalVariable" />
+		<module name="IllegalThrows" />
+		<module name="IllegalType" />
+		<module name="InnerAssignment" />
+		<module name="ModifiedControlVariable" />
+		<module name="NestedTryDepth">
+			<property name="max" value="1" />
+		</module>
+		<module name="ParameterAssignment" />
+		
+		<module name="FinalParameters" />
+
+
+	</module>
+</module>
+
+
